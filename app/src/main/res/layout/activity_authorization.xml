@@ -28,29 +28,31 @@
 
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:inputType="text"
             android:id="@+id/editLogin"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Alpha.EditText.Style"
             android:ems="10"
             android:hint="@string/login"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:singleLine="true"
-            android:background="@android:color/white" />
+            />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:inputType="textPassword"
             android:id="@+id/editPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Alpha.EditText.Style"
             android:ems="10"
             android:hint="@string/password"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:singleLine="true"
-            android:background="@android:color/white" />
+            />
 
         <Button
             android:layout_width="match_parent"
