@@ -29,7 +29,7 @@
         <EditText
             android:id="@+id/editLogin"
             android:inputType="text"
-            android:hint="@string/edit_login_hint"
+            android:hint="@string/editLoginHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -43,7 +43,7 @@
         <EditText
             android:id="@+id/editPassword"
             android:inputType="textPassword"
-            android:hint="@string/edit_password_hint"
+            android:hint="@string/editPasswordHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/buttonLogin"
-            android:text="@string/login_button"
+            android:text="@string/buttonLoginText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,9 +64,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/skipAuthButton"
+            android:id="@+id/buttonSkipAuth"
             android:gravity="center"
-            android:text="@string/auth_skip_button"
+            android:text="@string/buttonSkipAuthText"
             style="@style/TextAppearance.TextButton.Style"
             />
     </LinearLayout>
