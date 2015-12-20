@@ -27,9 +27,9 @@
         android:layout_centerVertical="true">
 
         <EditText
-            android:id="@+id/editLogin"
+            android:id="@+id/editUsername"
             android:inputType="text"
-            android:hint="@string/editLoginHint"
+            android:hint="@string/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -43,7 +43,7 @@
         <EditText
             android:id="@+id/editPassword"
             android:inputType="textPassword"
-            android:hint="@string/editPasswordHint"
+            android:hint="@string/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,8 +54,8 @@
             style="@style/Alpha.EditText.Style" />
 
         <Button
-            android:id="@+id/buttonLogin"
-            android:text="@string/buttonLoginText"
+            android:id="@+id/buttonSignIn"
+            android:text="@string/sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/buttonSkipAuthText"
+            android:text="@string/skip_auth"
             style="@style/TextAppearance.TextButton.Style"
             />
     </LinearLayout>

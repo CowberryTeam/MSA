@@ -2,8 +2,8 @@
     <string name="app_name">MSA</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_authorization">AuthorizationActivity</string>
-    <string name="editLoginHint">Login</string>
-    <string name="editPasswordHint">Password</string>
-    <string name="buttonLoginText">Login</string>
-    <string name="buttonSkipAuthText">Skip Authorization»</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="skip_auth">Skip Authorization»</string>
 </resources>
