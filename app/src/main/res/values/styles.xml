@@ -23,7 +23,7 @@
         <item name="android:textSize">10pt</item>
     </style>
     
-    <style name="TextAppearance.TextButton.Style" parent="@android:style/TextAppearance.Small">
+    <style name="TextButton" parent="@android:style/TextAppearance.Small">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">#e6e6e6</item>
         <item name="android:clickable">true</item>
