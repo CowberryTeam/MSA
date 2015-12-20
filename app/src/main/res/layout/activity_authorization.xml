@@ -62,9 +62,9 @@
             android:layout_marginRight="40dp"/>
 
         <TextView
+            android:id="@+id/buttonSkipAuth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonSkipAuth"
             android:gravity="center"
             android:text="@string/buttonSkipAuthText"
             style="@style/TextAppearance.TextButton.Style"
