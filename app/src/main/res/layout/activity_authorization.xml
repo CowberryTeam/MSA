@@ -28,7 +28,7 @@
         <EditText
             android:id="@+id/editLogin"
             android:inputType="text"
-            android:hint="@string/editLoginHint"
+            android:hint="@string/edit_login_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -42,7 +42,7 @@
         <EditText
             android:id="@+id/editPassword"
             android:inputType="textPassword"
-            android:hint="@string/editPasswordHint"
+            android:hint="@string/edit_password_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/buttonLogin"
-            android:text="@string/buttonLoginText"
+            android:text="@string/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
