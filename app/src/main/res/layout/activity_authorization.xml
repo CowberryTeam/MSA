@@ -6,57 +6,57 @@
     android:background="@drawable/colorful_background_1">
 
     <ImageView
+        android:id="@+id/imageLogo"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:layout_alignParentTop="true"
-        android:id="@+id/imageLogo"
         android:src="@drawable/ic_logo_main_white"
         android:paddingLeft="50dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/imageLogo"
-        android:layout_centerVertical="true"
-        android:id="@+id/linearLayout">
+        android:layout_below="@id/imageLogo"
+        android:layout_centerVertical="true">
 
         <EditText
             android:id="@+id/editLogin"
             android:inputType="text"
+            android:hint="@string/editLoginHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Alpha.EditText.Style"
             android:ems="10"
-            android:hint="@string/login"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:singleLine="true"
+            style="@style/Alpha.EditText.Style"
             />
 
         <EditText
             android:id="@+id/editPassword"
             android:inputType="textPassword"
+            android:hint="@string/editPasswordHint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Alpha.EditText.Style"
             android:ems="10"
-            android:hint="@string/password"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:singleLine="true"
+            style="@style/Alpha.EditText.Style"
             />
 
         <Button
+            android:id="@+id/buttonLogin"
+            android:text="@string/buttonLoginText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_button"
-            android:id="@+id/button"
             android:layout_gravity="center"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
