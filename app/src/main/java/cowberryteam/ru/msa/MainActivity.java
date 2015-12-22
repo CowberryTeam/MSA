@@ -88,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem != null && drawerItem.getIdentifier() == 1) {
-                            startSupportActionMode(new ActionBarCallBack());
-                            findViewById(R.id.action_mode_bar).setBackgroundColor(UIUtils.getThemeColorFromAttrOrRes(MainActivity.this, R.attr.colorPrimary, R.color.material_drawer_primary));
+
                         }
 
                         if (drawerItem instanceof Nameable) {
