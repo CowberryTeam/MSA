@@ -1,6 +1,7 @@
 package cowberryteam.ru.msa;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.materialize.util.UIUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class DairyActivity extends AppCompatActivity {
     private static final int PROFILE_SETTING = 1;
 
     //save our header or result
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dairy);
 
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -75,24 +76,46 @@ public class MainActivity extends AppCompatActivity {
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withIdentifier(2),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_question),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_github),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_question).withIdentifier(4),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_github).withIdentifier(5),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(FontAwesome.Icon.faw_cog)
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question).withIdentifier(6),
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(FontAwesome.Icon.faw_cog).withIdentifier(7)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        if (drawerItem != null && drawerItem.getIdentifier() == 1) {
+                        if (drawerItem != null) {
+                            Intent intent = null;
+                            if (drawerItem.getIdentifier() == 1) {
 
-                        }
+                            }
+                            else if (drawerItem.getIdentifier() == 2) {
 
-                        if (drawerItem instanceof Nameable) {
-                            toolbar.setTitle(((Nameable) drawerItem).getName().getText(MainActivity.this));
+                            }
+                            else if (drawerItem.getIdentifier() == 3) {
+                                //intent = new Intent(DairyActivity.this, DairyActivity.class);
+                            }
+                            else if (drawerItem.getIdentifier() == 4) {
+
+                            }
+                            else if (drawerItem.getIdentifier() == 5) {
+
+                            }
+                            else if(drawerItem.getIdentifier() == 6) {
+
+                            }
+                            else if(drawerItem.getIdentifier() == 7) {
+
+
+                            }
+
+                            if (intent != null) {
+                                DairyActivity.this.startActivity(intent);
+                            }
                         }
 
                         return false;
@@ -101,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        // set the selection to the item with the identifier 5
-        result.setSelection(5, false);
+        // set the selection to the item with the identifier 3 (Dairy)
+        result.setSelection(3, false);
 
         //set the back arrow in the toolbar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -158,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(MainActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(DairyActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);
