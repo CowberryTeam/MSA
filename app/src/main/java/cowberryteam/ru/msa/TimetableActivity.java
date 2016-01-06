@@ -33,7 +33,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.materialize.util.UIUtils;
 
-public class DairyActivity extends AppCompatActivity {
+public class TimetableActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
     private static final int DAIRY = 3;
@@ -51,12 +51,12 @@ public class DairyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dairy);
+        setContentView(R.layout.activity_timetable);
 
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_dairy);
+        getSupportActionBar().setTitle(R.string.app_name);
 
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);
@@ -84,13 +84,13 @@ public class DairyActivity extends AppCompatActivity {
                         if (profile!= null) {
                             Intent intent = null;
                             if (profile.getIdentifier() == ADD_ACCOUNT) {
-                                intent = new Intent(DairyActivity.this, AuthorizationActivity.class);
+                                intent = new Intent(TimetableActivity.this, AuthorizationActivity.class);
                             }
                             else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
-                                intent = new Intent(DairyActivity.this, AccManagerActivity.class);
+                                intent = new Intent(TimetableActivity.this, AccManagerActivity.class);
                             }
                             if (intent != null) {
-                                DairyActivity.this.startActivity(intent);
+                                TimetableActivity.this.startActivity(intent);
                             }
                         }
 
@@ -125,21 +125,20 @@ public class DairyActivity extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == PM) {
 
                             } else if (drawerItem.getIdentifier() == DAIRY) {
-                                //intent = new Intent(DairyActivity.this, DairyActivity.class);
+                                intent = new Intent(TimetableActivity.this, DairyActivity.class);
+                                finish();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
-                                intent = new Intent(DairyActivity.this, TimetableActivity.class);
-                                finish();
 
                             } else if (drawerItem.getIdentifier() == HELP) {
 
                             } else if (drawerItem.getIdentifier() == SETTINGS) {
-                                intent = new Intent(DairyActivity.this, SettingsActivity.class);
+                                intent = new Intent(TimetableActivity.this, SettingsActivity.class);
                             }
 
                             if (intent != null) {
-                                DairyActivity.this.startActivity(intent);
+                                TimetableActivity.this.startActivity(intent);
                             }
                         }
 
@@ -150,7 +149,7 @@ public class DairyActivity extends AppCompatActivity {
                 .build();
 
         // set the selection to the item with the identifier 3 (Dairy)
-        result.setSelection(DAIRY, false);
+        result.setSelection(TIMETABLE, false);
 
         //set the back arrow in the toolbar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -209,7 +208,7 @@ public class DairyActivity extends AppCompatActivity {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(DairyActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(TimetableActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);

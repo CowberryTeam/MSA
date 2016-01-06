@@ -25,10 +25,17 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_settings"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" >
         </activity>
-        <activity android:name=".AccManagerActivity" >
+        <activity android:name=".AccManagerActivity"
+            android:label="@string/title_activity_accountmanager"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar">
+        </activity>
+        <activity
+            android:name=".TimetableActivity"
+            android:label="@string/title_activity_timetable"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
         </activity>
     </application>
 

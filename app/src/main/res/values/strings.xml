@@ -20,6 +20,7 @@
     <string name="drawer_item_section_mrko">MRKO</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_accountmanager">Account Manager</string>
+    <string name="title_activity_timetable">Timetable</string>
 
     <!-- Strings related to Settings -->
 
