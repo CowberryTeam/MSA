@@ -34,7 +34,8 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.materialize.util.UIUtils;
 
 public class DairyActivity extends AppCompatActivity {
-    private static final int PROFILE_SETTING = 1;
+    private static final int ADD_ACCOUNT = 9;
+    private static final int ACCOUNT_MANAGER = 8;
 
     //save our header or result
     private AccountHeader headerResult = null;
@@ -60,16 +61,35 @@ public class DairyActivity extends AppCompatActivity {
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withCompactStyle(false)
+                .withCompactStyle(true)
                 .withHeaderBackground(R.drawable.ic_header)
                 .addProfiles(
                         profile,
                         profile2,
                         //don't ask but google uses 14dp for the add account icon in gmail but 20dp for the normal icons (like manage account)
-                        new ProfileSettingDrawerItem().withName("Add Account").withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_add).actionBar().paddingDp(5).colorRes(R.color.material_drawer_dark_primary_text)).withIdentifier(PROFILE_SETTING),
-                        new ProfileSettingDrawerItem().withName("Manage Account").withIcon(GoogleMaterial.Icon.gmd_settings)
+                        new ProfileSettingDrawerItem().withName("Add Account").withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_add).actionBar().paddingDp(5).colorRes(R.color.material_drawer_primary_text)).withIdentifier(ADD_ACCOUNT),
+                        new ProfileSettingDrawerItem().withName("Manage Account").withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(ACCOUNT_MANAGER)
                 )
                 .withSavedInstance(savedInstanceState)
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean current) {
+                        if (profile!= null) {
+                            Intent intent = null;
+                            if (profile.getIdentifier() == ADD_ACCOUNT) {
+                                intent = new Intent(DairyActivity.this, AuthorizationActivity.class);
+                            }
+                            else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
+                                intent = new Intent(DairyActivity.this, AccManagerActivity.class);
+                            }
+                            if (intent != null) {
+                                DairyActivity.this.startActivity(intent);
+                            }
+                        }
+
+                        return false;
+                    }
+                })
                 .build();
 
         //Create the drawer
@@ -95,23 +115,17 @@ public class DairyActivity extends AppCompatActivity {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == 1) {
 
-                            }
-                            else if (drawerItem.getIdentifier() == 2) {
+                            } else if (drawerItem.getIdentifier() == 2) {
 
-                            }
-                            else if (drawerItem.getIdentifier() == 3) {
+                            } else if (drawerItem.getIdentifier() == 3) {
                                 //intent = new Intent(DairyActivity.this, DairyActivity.class);
-                            }
-                            else if (drawerItem.getIdentifier() == 4) {
+                            } else if (drawerItem.getIdentifier() == 4) {
 
-                            }
-                            else if (drawerItem.getIdentifier() == 5) {
+                            } else if (drawerItem.getIdentifier() == 5) {
 
-                            }
-                            else if(drawerItem.getIdentifier() == 6) {
+                            } else if (drawerItem.getIdentifier() == 6) {
 
-                            }
-                            else if(drawerItem.getIdentifier() == 7) {
+                            } else if (drawerItem.getIdentifier() == 7) {
                                 intent = new Intent(DairyActivity.this, SettingsActivity.class);
                             }
 
