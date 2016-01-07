@@ -177,8 +177,8 @@ public class NewsActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NewsOneFragment(), "ONE");
-        adapter.addFragment(new NewsTwoFragment(), "TWO");
+        adapter.addFragment(new NewsOneFragment(), getString(R.string.title_fragment_news_one));
+        adapter.addFragment(new NewsTwoFragment(), getString(R.string.title_fragment_news_two));
         viewPager.setAdapter(adapter);
     }
 
