@@ -28,13 +28,18 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" >
         </activity>
-        <activity android:name=".AccManagerActivity"
+        <activity
+            android:name=".AccManagerActivity"
             android:label="@string/title_activity_accountmanager"
-            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar">
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" >
         </activity>
         <activity
             android:name=".TimetableActivity"
             android:label="@string/title_activity_timetable"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus" >
+        </activity>
+        <activity android:name=".NewsActivity"
+            android:label="@string/title_activity_news"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
         </activity>
     </application>

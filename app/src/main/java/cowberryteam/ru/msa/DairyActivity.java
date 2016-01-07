@@ -121,7 +121,9 @@ public class DairyActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == NEWS) {
-
+                                result.closeDrawer();
+                                intent = new Intent(DairyActivity.this, NewsActivity.class);
+                                finish();
                             } else if (drawerItem.getIdentifier() == PM) {
 
                             } else if (drawerItem.getIdentifier() == DAIRY) {
@@ -129,6 +131,7 @@ public class DairyActivity extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
+                                result.closeDrawer();
                                 intent = new Intent(DairyActivity.this, TimetableActivity.class);
                                 finish();
 
