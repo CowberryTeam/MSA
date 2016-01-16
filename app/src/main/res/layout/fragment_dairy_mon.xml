@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cowberryteam.ru.msa.fragment.DairyMonFragment">
+
+    <ScrollView android:id="@+id/dairy" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="0,1"
+            android:background="@color/colorTableBorder">
+
+            <TableRow>
+                <TextView android:id="@+id/textSubjectHeader"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="@string/table_daity_subject"/>
+                <TextView android:id="@+id/textHomeworkHeader"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="@string/table_daity_homework"/>
+                <TextView android:id="@+id/textMarksHeader"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="@string/table_daity_marks"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

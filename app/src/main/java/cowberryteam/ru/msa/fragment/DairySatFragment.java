@@ -1,4 +1,4 @@
-package cowberryteam.ru.msa;
+package cowberryteam.ru.msa.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class NewsTwoFragment extends Fragment {
-    public NewsTwoFragment() {
+import cowberryteam.ru.msa.R;
+
+public class DairySatFragment extends Fragment {
+    public DairySatFragment() {
         // Required empty public constructor
     }
 
@@ -20,7 +22,6 @@ public class NewsTwoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news_two, container, false);
+        return inflater.inflate(R.layout.fragment_dairy_sat, container, false);
     }
-
 }

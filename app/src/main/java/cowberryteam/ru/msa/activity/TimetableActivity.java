@@ -1,19 +1,13 @@
-package cowberryteam.ru.msa;
+package cowberryteam.ru.msa.activity;
 
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,13 +29,11 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.materialize.util.UIUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import cowberryteam.ru.msa.R;
 
-public class NewsActivity extends AppCompatActivity {
+public class TimetableActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
     private static final int DAIRY = 3;
@@ -55,24 +47,16 @@ public class NewsActivity extends AppCompatActivity {
     //save our header or result
     private AccountHeader headerResult = null;
     private Drawer result = null;
-    private TabLayout tabLayout = null;
-    private ViewPager viewPaper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView(R.layout.activity_timetable);
 
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_news);
-
-        viewPaper = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPaper);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPaper);
+        getSupportActionBar().setTitle(R.string.title_activity_timetable);
 
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);
@@ -100,13 +84,13 @@ public class NewsActivity extends AppCompatActivity {
                         if (profile!= null) {
                             Intent intent = null;
                             if (profile.getIdentifier() == ADD_ACCOUNT) {
-                                intent = new Intent(NewsActivity.this, AuthorizationActivity.class);
+                                intent = new Intent(TimetableActivity.this, AuthorizationActivity.class);
                             }
                             else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
-                                intent = new Intent(NewsActivity.this, AccManagerActivity.class);
+                                intent = new Intent(TimetableActivity.this, AccManagerActivity.class);
                             }
                             if (intent != null) {
-                                NewsActivity.this.startActivity(intent);
+                                TimetableActivity.this.startActivity(intent);
                             }
                         }
 
@@ -137,27 +121,27 @@ public class NewsActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == NEWS) {
-
+                                result.closeDrawer();
+                                intent = new Intent(TimetableActivity.this, NewsActivity.class);
+                                finish();
                             } else if (drawerItem.getIdentifier() == PM) {
 
                             } else if (drawerItem.getIdentifier() == DAIRY) {
                                 result.closeDrawer();
-                                intent = new Intent(NewsActivity.this, DairyActivity.class);
+                                intent = new Intent(TimetableActivity.this, DairyActivity.class);
                                 finish();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
-                                result.closeDrawer();
-                                intent = new Intent(NewsActivity.this, TimetableActivity.class);
-                                finish();
+
                             } else if (drawerItem.getIdentifier() == HELP) {
 
                             } else if (drawerItem.getIdentifier() == SETTINGS) {
-                                intent = new Intent(NewsActivity.this, SettingsActivity.class);
+                                intent = new Intent(TimetableActivity.this, SettingsActivity.class);
                             }
 
                             if (intent != null) {
-                                NewsActivity.this.startActivity(intent);
+                                TimetableActivity.this.startActivity(intent);
                             }
                         }
 
@@ -168,49 +152,12 @@ public class NewsActivity extends AppCompatActivity {
                 .build();
 
         // set the selection to the item with the identifier 3 (Dairy)
-        result.setSelection(NEWS, false);
+        result.setSelection(TIMETABLE, false);
 
         //set the back arrow in the toolbar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setHomeButtonEnabled(false);
     }
-
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NewsOneFragment(), getString(R.string.title_fragment_news_one));
-        adapter.addFragment(new NewsTwoFragment(), getString(R.string.title_fragment_news_two));
-        viewPager.setAdapter(adapter);
-    }
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
-    }
-
     private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
@@ -264,7 +211,7 @@ public class NewsActivity extends AppCompatActivity {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(NewsActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(TimetableActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);

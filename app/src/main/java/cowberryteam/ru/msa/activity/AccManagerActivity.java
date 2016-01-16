@@ -1,4 +1,4 @@
-package cowberryteam.ru.msa;
+package cowberryteam.ru.msa.activity;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.mikepenz.materialize.util.UIUtils;
 
-public class SettingsActivity extends AppCompatActivity {
+import cowberryteam.ru.msa.R;
+
+public class AccManagerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_settings);
+        getSupportActionBar().setTitle(R.string.title_activity_accountmanager);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setHomeButtonEnabled(false);
@@ -65,9 +66,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(SettingsActivity.this, R.attr.colorPrimary, R.color.material_drawer_primary));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(AccManagerActivity.this, R.attr.colorPrimary, R.color.material_drawer_primary));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);
