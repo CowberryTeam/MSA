@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -62,6 +63,8 @@ public class DairyActivity extends AppCompatActivity {
     //save our header or result
     private AccountHeader headerResult = null;
     private Drawer result = null;
+    private TabLayout tabLayout = null;
+    private ViewPager viewPaper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,12 @@ public class DairyActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.title_activity_dairy);
+
+        viewPaper = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPaper);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPaper);
 
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);

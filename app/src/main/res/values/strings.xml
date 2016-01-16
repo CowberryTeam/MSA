@@ -31,9 +31,9 @@
     <string name="title_fragment_dairy_fri">Fri</string>
     <string name="title_fragment_dairy_sat">Sat</string>
     <string name="action_calendar">Calendar</string>
-    <string name="table_daity_subject">Subject</string>
-    <string name="table_daity_homework">Homework</string>
-    <string name="table_daity_marks">Marks</string>
+    <string name="table_dairy_subject">Subject</string>
+    <string name="table_dairy_homework">Homework</string>
+    <string name="table_dairy_marks">Marks</string>
 
 
 <!-- TODO: Remove or change this placeholder text -->

@@ -10,28 +10,223 @@
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:stretchColumns="0,1"
+            android:stretchColumns="1, 2"
             android:background="@color/colorTableBorder">
 
             <TableRow>
                 <TextView android:id="@+id/textSubjectHeader"
                     android:background="@color/md_white_1000"
                     android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorTableHeader"
-                    android:text="@string/table_daity_subject"/>
+                    android:layout_span="2"
+                    android:text="@string/table_dairy_subject"/>
                 <TextView android:id="@+id/textHomeworkHeader"
                     android:background="@color/md_white_1000"
                     android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorTableHeader"
-                    android:text="@string/table_daity_homework"/>
+                    android:text="@string/table_dairy_homework"/>
                 <TextView android:id="@+id/textMarksHeader"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="@string/table_dairy_marks"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum1"
                     android:background="@color/md_white_1000"
                     android:layout_margin="1dip"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/colorTableHeader"
-                    android:text="@string/table_daity_marks"/>
+                    android:text="1."/>
+                <TextView android:id="@+id/textSubject1"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework1"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark1"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum2"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="2."/>
+                <TextView android:id="@+id/textSubject2"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework2"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark2"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum3"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="3."/>
+                <TextView android:id="@+id/textSubject3"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework3"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark3"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum4"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="4."/>
+                <TextView android:id="@+id/textSubject4"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework4"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark4"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum5"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="5."/>
+                <TextView android:id="@+id/textSubject5"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework5"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark5"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum6"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="6."/>
+                <TextView android:id="@+id/textSubject6"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework6"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark6"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum7"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="7."/>
+                <TextView android:id="@+id/textSubject7"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework7"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark7"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/textSubjectNum8"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"
+                    android:text="8."/>
+                <TextView android:id="@+id/textSubject8"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textHomework8"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTableHeader"/>
+                <TextView android:id="@+id/textMark8"
+                    android:background="@color/md_white_1000"
+                    android:layout_margin="1dip"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/md_white_1000"
+                    android:clickable="true"/>
             </TableRow>
 
         </TableLayout>
