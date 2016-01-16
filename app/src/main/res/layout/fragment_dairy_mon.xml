@@ -16,38 +16,31 @@
             android:layout_marginTop="10dp"
             android:background="@color/md_white_1000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1."
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/md_black_1000"
-                android:id="@+id/textSubjectNum1"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"/>
-
             <TextView android:id="@+id/textSubject1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Математика"
+                android:text="1. Математика"
                 android:textColor="@color/md_black_1000"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum1"
-                android:layout_toLeftOf="@+id/textMark1" />
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:layout_alignParentLeft="true" />
 
             <TextView android:id="@+id/textHomeWork1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Ме-га-зве-зда, Статус человека близкий к рангу Бога, Мегазвездой зовут того, кто получает много. Того, кто прочно приземлился на олимпе типа, И чье лицо смеется с каждого экрана типа. Готов признать, что и сам не прочь пополнить строй Баловней судьбы, только выловить мне удачу бы. Я бы не стал при таком раскладе жить, как лох, Я бы постарался обналичить каждый свой вздох."
+                android:text="Ме-га-зве-зда, Статус человека близкий к рангу Бога, Мегазвездой зовут того, кто получает много."
                 android:textColor="@color/colorGrey"
                 android:layout_below="@+id/textSubject1"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum1"
+                android:paddingLeft="20dp"
+                android:layout_alignParentLeft="true"
+                android:paddingBottom="10dp"
                 android:clickable="true"
-                android:layout_toLeftOf="@+id/textMark1" />
+                android:layout_toLeftOf="@+id/textMark1"
+                android:autoText="false"
+                android:elegantTextHeight="false"
+                android:singleLine="true" />
 
             <TextView android:id="@+id/textMark1"
                 android:layout_width="wrap_content"
@@ -58,7 +51,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="20dp"
+                android:paddingRight="20dp"
                 android:clickable="true"/>
         </RelativeLayout>
 
