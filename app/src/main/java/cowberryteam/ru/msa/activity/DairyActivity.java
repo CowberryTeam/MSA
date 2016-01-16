@@ -46,8 +46,12 @@ import cowberryteam.ru.msa.fragment.DairySatFragment;
 import cowberryteam.ru.msa.fragment.DairyThuFragment;
 import cowberryteam.ru.msa.fragment.DairyTueFragment;
 import cowberryteam.ru.msa.fragment.DairyWedFragment;
-import cowberryteam.ru.msa.fragment.NewsOneFragment;
-import cowberryteam.ru.msa.fragment.NewsTwoFragment;
+import cowberryteam.ru.msa.fragment.TimetableFriFragment;
+import cowberryteam.ru.msa.fragment.TimetableMonFragment;
+import cowberryteam.ru.msa.fragment.TimetableSatFragment;
+import cowberryteam.ru.msa.fragment.TimetableThuFragment;
+import cowberryteam.ru.msa.fragment.TimetableTueFragment;
+import cowberryteam.ru.msa.fragment.TimetableWedFragment;
 
 public class DairyActivity extends AppCompatActivity {
     private static final int NEWS = 1;

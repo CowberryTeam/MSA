@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +36,22 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialize.util.UIUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cowberryteam.ru.msa.R;
+import cowberryteam.ru.msa.fragment.DairyFriFragment;
+import cowberryteam.ru.msa.fragment.DairyMonFragment;
+import cowberryteam.ru.msa.fragment.DairySatFragment;
+import cowberryteam.ru.msa.fragment.DairyThuFragment;
+import cowberryteam.ru.msa.fragment.DairyTueFragment;
+import cowberryteam.ru.msa.fragment.DairyWedFragment;
+import cowberryteam.ru.msa.fragment.TimetableFriFragment;
+import cowberryteam.ru.msa.fragment.TimetableMonFragment;
+import cowberryteam.ru.msa.fragment.TimetableSatFragment;
+import cowberryteam.ru.msa.fragment.TimetableThuFragment;
+import cowberryteam.ru.msa.fragment.TimetableTueFragment;
+import cowberryteam.ru.msa.fragment.TimetableWedFragment;
 
 public class TimetableActivity extends AppCompatActivity {
     private static final int NEWS = 1;
@@ -47,6 +67,8 @@ public class TimetableActivity extends AppCompatActivity {
     //save our header or result
     private AccountHeader headerResult = null;
     private Drawer result = null;
+    private TabLayout tabLayout = null;
+    private ViewPager viewPaper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +79,12 @@ public class TimetableActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.title_activity_timetable);
+
+        viewPaper = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPaper);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPaper);
 
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);
@@ -170,6 +198,44 @@ public class TimetableActivity extends AppCompatActivity {
     };
 
 
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new TimetableMonFragment(), getString(R.string.title_fragment_dairy_mon));
+        adapter.addFragment(new TimetableTueFragment(), getString(R.string.title_fragment_dairy_tue));
+        adapter.addFragment(new TimetableWedFragment(), getString(R.string.title_fragment_dairy_wed));
+        adapter.addFragment(new TimetableThuFragment(), getString(R.string.title_fragment_dairy_thu));
+        adapter.addFragment(new TimetableFriFragment(), getString(R.string.title_fragment_dairy_fri));
+        adapter.addFragment(new TimetableSatFragment(), getString(R.string.title_fragment_dairy_sat));
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

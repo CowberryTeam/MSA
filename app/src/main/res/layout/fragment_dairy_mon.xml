@@ -52,8 +52,6 @@
                 android:paddingBottom="10dp"
                 android:clickable="true"
                 android:layout_toLeftOf="@+id/textMark1"
-                android:autoText="false"
-                android:elegantTextHeight="false"
                 android:singleLine="true" />
 
             <TextView android:id="@+id/textMark1"
