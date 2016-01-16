@@ -1,237 +1,265 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="cowberryteam.ru.msa.fragment.DairyMonFragment">
 
-    <ScrollView android:id="@+id/dairy" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <LinearLayout android:id="@+id/linearDairy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_white_1000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView android:id="@+id/textSubject1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum1"
+                android:layout_toLeftOf="@+id/textMark1" />
+
+            <TextView android:id="@+id/textHomeWork1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Некоторые очень сложные вещи"
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject1"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum1"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark1" />
+
+            <TextView android:id="@+id/textMark1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_white_1000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView android:id="@+id/textSubject2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum2"
+                android:layout_toLeftOf="@+id/textMark2" />
+
+            <TextView android:id="@+id/textHomeWork2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Некоторые очень сложные вещи"
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject2"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum2"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark2" />
+
+            <TextView android:id="@+id/textMark2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_white_1000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum3"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView android:id="@+id/textSubject3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum3"
+                android:layout_toLeftOf="@+id/textMark3" />
+
+            <TextView android:id="@+id/textHomeWork3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Некоторые очень сложные вещи"
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject3"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum3"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark3" />
+
+            <TextView android:id="@+id/textMark3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_white_1000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum4"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView android:id="@+id/textSubject4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum4"
+                android:layout_toLeftOf="@+id/textMark4" />
+
+            <TextView android:id="@+id/textHomeWork4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Некоторые очень сложные вещи"
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject4"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum4"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark4" />
+
+            <TextView android:id="@+id/textMark4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/md_white_1000">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum5"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp" />
+
+            <TextView android:id="@+id/textSubject5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum5"
+                android:layout_toLeftOf="@+id/textMark5" />
+
+            <TextView android:id="@+id/textHomeWork5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="В небе курят тучи, Мисс Луна бела и томна. В пасти неба черной, будто бы большая пломба. Вижу звезды рассыпаны по небу произвольно. Я лежу в кровавой луже, мне давно уже не больно. История проста моя, стара как мир она, Как старое исподнее, исправно перестирано до дыр, затёрто, Избито рецидивами, её не рассказать слезливо, фразами красивыми. "
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject5"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/textSubjectNum5"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark5" />
+
+            <TextView android:id="@+id/textMark5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:clickable="true"/>
+        </RelativeLayout>
 
 
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1, 2"
-            android:background="@color/colorTableBorder">
-
-            <TableRow>
-                <TextView android:id="@+id/textSubjectHeader"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorTableHeader"
-                    android:layout_span="2"
-                    android:text="@string/table_dairy_subject"/>
-                <TextView android:id="@+id/textHomeworkHeader"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="@string/table_dairy_homework"/>
-                <TextView android:id="@+id/textMarksHeader"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="@string/table_dairy_marks"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum1"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="1."/>
-                <TextView android:id="@+id/textSubject1"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework1"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark1"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-
-
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum2"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="2."/>
-                <TextView android:id="@+id/textSubject2"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework2"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark2"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum3"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="3."/>
-                <TextView android:id="@+id/textSubject3"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework3"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark3"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum4"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="4."/>
-                <TextView android:id="@+id/textSubject4"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework4"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark4"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum5"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="5."/>
-                <TextView android:id="@+id/textSubject5"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework5"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark5"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum6"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="6."/>
-                <TextView android:id="@+id/textSubject6"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework6"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark6"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum7"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="7."/>
-                <TextView android:id="@+id/textSubject7"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework7"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark7"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:id="@+id/textSubjectNum8"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"
-                    android:text="8."/>
-                <TextView android:id="@+id/textSubject8"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textHomework8"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/colorTableHeader"/>
-                <TextView android:id="@+id/textMark8"
-                    android:background="@color/md_white_1000"
-                    android:layout_margin="1dip"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/md_white_1000"
-                    android:clickable="true"/>
-            </TableRow>
-
-        </TableLayout>
-    </ScrollView>
-
-
-
-</FrameLayout>
+    </LinearLayout>
+</ScrollView>
