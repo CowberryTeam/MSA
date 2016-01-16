@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/md_white_1000">
 
@@ -24,7 +24,8 @@
                 android:textColor="@color/md_black_1000"
                 android:id="@+id/textSubjectNum1"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"/>
 
             <TextView android:id="@+id/textSubject1"
                 android:layout_width="wrap_content"
@@ -40,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Некоторые очень сложные вещи"
+                android:text="Ме-га-зве-зда, Статус человека близкий к рангу Бога, Мегазвездой зовут того, кто получает много. Того, кто прочно приземлился на олимпе типа, И чье лицо смеется с каждого экрана типа. Готов признать, что и сам не прочь пополнить строй Баловней судьбы, только выловить мне удачу бы. Я бы не стал при таком раскладе жить, как лох, Я бы постарался обналичить каждый свой вздох."
                 android:textColor="@color/colorGrey"
                 android:layout_below="@+id/textSubject1"
                 android:layout_marginLeft="5dp"
@@ -51,215 +52,15 @@
             <TextView android:id="@+id/textMark1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5"
+                android:text="5/5/5"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"/>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/md_white_1000">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2."
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/md_black_1000"
-                android:id="@+id/textSubjectNum2"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp" />
-
-            <TextView android:id="@+id/textSubject2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Математика"
-                android:textColor="@color/md_black_1000"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum2"
-                android:layout_toLeftOf="@+id/textMark2" />
-
-            <TextView android:id="@+id/textHomeWork2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Некоторые очень сложные вещи"
-                android:textColor="@color/colorGrey"
-                android:layout_below="@+id/textSubject2"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum2"
-                android:clickable="true"
-                android:layout_toLeftOf="@+id/textMark2" />
-
-            <TextView android:id="@+id/textMark2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="20dp"
-                android:clickable="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/md_white_1000">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3."
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/md_black_1000"
-                android:id="@+id/textSubjectNum3"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp" />
-
-            <TextView android:id="@+id/textSubject3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Математика"
-                android:textColor="@color/md_black_1000"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum3"
-                android:layout_toLeftOf="@+id/textMark3" />
-
-            <TextView android:id="@+id/textHomeWork3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Некоторые очень сложные вещи"
-                android:textColor="@color/colorGrey"
-                android:layout_below="@+id/textSubject3"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum3"
-                android:clickable="true"
-                android:layout_toLeftOf="@+id/textMark3" />
-
-            <TextView android:id="@+id/textMark3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="20dp"
-                android:clickable="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/md_white_1000">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4."
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/md_black_1000"
-                android:id="@+id/textSubjectNum4"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp" />
-
-            <TextView android:id="@+id/textSubject4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Математика"
-                android:textColor="@color/md_black_1000"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum4"
-                android:layout_toLeftOf="@+id/textMark4" />
-
-            <TextView android:id="@+id/textHomeWork4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Некоторые очень сложные вещи"
-                android:textColor="@color/colorGrey"
-                android:layout_below="@+id/textSubject4"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum4"
-                android:clickable="true"
-                android:layout_toLeftOf="@+id/textMark4" />
-
-            <TextView android:id="@+id/textMark4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="20dp"
-                android:clickable="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/md_white_1000">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5."
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/md_black_1000"
-                android:id="@+id/textSubjectNum5"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp" />
-
-            <TextView android:id="@+id/textSubject5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Математика"
-                android:textColor="@color/md_black_1000"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum5"
-                android:layout_toLeftOf="@+id/textMark5" />
-
-            <TextView android:id="@+id/textHomeWork5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="В небе курят тучи, Мисс Луна бела и томна. В пасти неба черной, будто бы большая пломба. Вижу звезды рассыпаны по небу произвольно. Я лежу в кровавой луже, мне давно уже не больно. История проста моя, стара как мир она, Как старое исподнее, исправно перестирано до дыр, затёрто, Избито рецидивами, её не рассказать слезливо, фразами красивыми. "
-                android:textColor="@color/colorGrey"
-                android:layout_below="@+id/textSubject5"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/textSubjectNum5"
-                android:clickable="true"
-                android:layout_toLeftOf="@+id/textMark5" />
-
-            <TextView android:id="@+id/textMark5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="20dp"
-                android:clickable="true"/>
-        </RelativeLayout>
-
 
     </LinearLayout>
 </ScrollView>
