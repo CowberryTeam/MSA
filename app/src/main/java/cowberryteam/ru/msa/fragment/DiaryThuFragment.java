@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import cowberryteam.ru.msa.R;
 
-public class DairyWedFragment extends Fragment {
-    public DairyWedFragment() {
+public class DiaryThuFragment extends Fragment {
+    public DiaryThuFragment() {
         // Required empty public constructor
     }
 
@@ -22,6 +22,6 @@ public class DairyWedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dairy_wed, container, false);
+        return inflater.inflate(R.layout.fragment_diary_thu, container, false);
     }
 }

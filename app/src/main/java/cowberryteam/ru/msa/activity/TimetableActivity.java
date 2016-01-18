@@ -40,12 +40,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cowberryteam.ru.msa.R;
-import cowberryteam.ru.msa.fragment.DairyFriFragment;
-import cowberryteam.ru.msa.fragment.DairyMonFragment;
-import cowberryteam.ru.msa.fragment.DairySatFragment;
-import cowberryteam.ru.msa.fragment.DairyThuFragment;
-import cowberryteam.ru.msa.fragment.DairyTueFragment;
-import cowberryteam.ru.msa.fragment.DairyWedFragment;
 import cowberryteam.ru.msa.fragment.TimetableFriFragment;
 import cowberryteam.ru.msa.fragment.TimetableMonFragment;
 import cowberryteam.ru.msa.fragment.TimetableSatFragment;
@@ -56,7 +50,7 @@ import cowberryteam.ru.msa.fragment.TimetableWedFragment;
 public class TimetableActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
-    private static final int DAIRY = 3;
+    private static final int DIARY = 3;
     private static final int ALL_MARKS = 4;
     private static final int TIMETABLE = 5;
     private static final int HELP = 6;
@@ -136,7 +130,7 @@ public class TimetableActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(false).withIdentifier(NEWS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(false).withIdentifier(PM),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DAIRY),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DIARY),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(false).withIdentifier(ALL_MARKS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_github).withSelectable(false).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
@@ -154,9 +148,9 @@ public class TimetableActivity extends AppCompatActivity {
                                 finish();
                             } else if (drawerItem.getIdentifier() == PM) {
 
-                            } else if (drawerItem.getIdentifier() == DAIRY) {
+                            } else if (drawerItem.getIdentifier() == DIARY) {
                                 result.closeDrawer();
-                                intent = new Intent(TimetableActivity.this, DairyActivity.class);
+                                intent = new Intent(TimetableActivity.this, DiaryActivity.class);
                                 finish();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
 
@@ -179,7 +173,7 @@ public class TimetableActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        // set the selection to the item with the identifier 3 (Dairy)
+        // set the selection to the item with the identifier 3 (Diary)
         result.setSelection(TIMETABLE, false);
 
         //set the back arrow in the toolbar
@@ -200,12 +194,12 @@ public class TimetableActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new TimetableMonFragment(), getString(R.string.title_fragment_dairy_mon));
-        adapter.addFragment(new TimetableTueFragment(), getString(R.string.title_fragment_dairy_tue));
-        adapter.addFragment(new TimetableWedFragment(), getString(R.string.title_fragment_dairy_wed));
-        adapter.addFragment(new TimetableThuFragment(), getString(R.string.title_fragment_dairy_thu));
-        adapter.addFragment(new TimetableFriFragment(), getString(R.string.title_fragment_dairy_fri));
-        adapter.addFragment(new TimetableSatFragment(), getString(R.string.title_fragment_dairy_sat));
+        adapter.addFragment(new TimetableMonFragment(), getString(R.string.title_fragment_diary_mon));
+        adapter.addFragment(new TimetableTueFragment(), getString(R.string.title_fragment_diary_tue));
+        adapter.addFragment(new TimetableWedFragment(), getString(R.string.title_fragment_diary_wed));
+        adapter.addFragment(new TimetableThuFragment(), getString(R.string.title_fragment_diary_thu));
+        adapter.addFragment(new TimetableFriFragment(), getString(R.string.title_fragment_diary_fri));
+        adapter.addFragment(new TimetableSatFragment(), getString(R.string.title_fragment_diary_sat));
         viewPager.setAdapter(adapter);
     }
 

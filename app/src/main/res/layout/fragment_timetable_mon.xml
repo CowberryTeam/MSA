@@ -2,10 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context="cowberryteam.ru.msa.fragment.DairyMonFragment">
+    tools:context=".fragment.DiaryMonFragment">
 
 
-    <LinearLayout android:id="@+id/linearDairy"
+    <LinearLayout android:id="@+id/linearDiary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">

@@ -46,7 +46,7 @@ import cowberryteam.ru.msa.R;
 public class NewsActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
-    private static final int DAIRY = 3;
+    private static final int DIARY = 3;
     private static final int ALL_MARKS = 4;
     private static final int TIMETABLE = 5;
     private static final int HELP = 6;
@@ -126,7 +126,7 @@ public class NewsActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(false).withIdentifier(NEWS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(false).withIdentifier(PM),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DAIRY),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DIARY),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(false).withIdentifier(ALL_MARKS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_github).withSelectable(false).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
@@ -142,9 +142,9 @@ public class NewsActivity extends AppCompatActivity {
 
                             } else if (drawerItem.getIdentifier() == PM) {
 
-                            } else if (drawerItem.getIdentifier() == DAIRY) {
+                            } else if (drawerItem.getIdentifier() == DIARY) {
                                 result.closeDrawer();
-                                intent = new Intent(NewsActivity.this, DairyActivity.class);
+                                intent = new Intent(NewsActivity.this, DiaryActivity.class);
                                 finish();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
 
@@ -169,7 +169,7 @@ public class NewsActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        // set the selection to the item with the identifier 3 (Dairy)
+        // set the selection to the item with the identifier 3 (Diary)
         result.setSelection(NEWS, false);
 
         //set the back arrow in the toolbar
