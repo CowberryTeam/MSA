@@ -1,10 +1,71 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".fragment.DiaryWedFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout android:id="@+id/linearDiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/md_white_1000">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/md_black_1000"
+                android:id="@+id/textSubjectNum1"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="5dp" />
+
+            <TextView android:id="@+id/textSubject1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:paddingTop="10dp"
+                android:layout_toRightOf="@+id/textSubjectNum1"
+                android:layout_toLeftOf="@+id/textMark1" />
+
+            <TextView android:id="@+id/textHomeWork1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ме-га-зве-зда, Статус человека близкий к рангу Бога, Мегазвездой зовут того, кто получает много."
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject1"
+                android:paddingLeft="15dp"
+                android:paddingBottom="10dp"
+                android:clickable="true"
+                android:layout_toLeftOf="@+id/textMark1"
+                android:singleLine="true" />
+
+            <TextView android:id="@+id/textMark1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5/5/5"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
