@@ -46,17 +46,11 @@ import cowberryteam.ru.msa.fragment.DiarySatFragment;
 import cowberryteam.ru.msa.fragment.DiaryThuFragment;
 import cowberryteam.ru.msa.fragment.DiaryTueFragment;
 import cowberryteam.ru.msa.fragment.DiaryWedFragment;
-import cowberryteam.ru.msa.fragment.TimetableFriFragment;
-import cowberryteam.ru.msa.fragment.TimetableMonFragment;
-import cowberryteam.ru.msa.fragment.TimetableSatFragment;
-import cowberryteam.ru.msa.fragment.TimetableThuFragment;
-import cowberryteam.ru.msa.fragment.TimetableTueFragment;
-import cowberryteam.ru.msa.fragment.TimetableWedFragment;
 
 public class DiaryActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
-    private static final int diary = 3;
+    private static final int DAIRY = 3;
     private static final int ALL_MARKS = 4;
     private static final int TIMETABLE = 5;
     private static final int HELP = 6;
@@ -78,7 +72,7 @@ public class DiaryActivity extends AppCompatActivity {
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_diary);
+        getSupportActionBar().setTitle(R.string.title_activity_dairy);
 
         viewPaper = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPaper);
@@ -136,7 +130,7 @@ public class DiaryActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(false).withIdentifier(NEWS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(false).withIdentifier(PM),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(diary),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DAIRY),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(false).withIdentifier(ALL_MARKS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_times).withSelectable(false).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
@@ -154,9 +148,12 @@ public class DiaryActivity extends AppCompatActivity {
                                 finish();
                             } else if (drawerItem.getIdentifier() == PM) {
 
-                            } else if (drawerItem.getIdentifier() == diary) {
-                                //intent = new Intent(DiaryActivity.this, DiaryActivity.class);
+                            } else if (drawerItem.getIdentifier() == DAIRY) {
+                                //intent = new Intent(DairyActivity.this, DairyActivity.class);
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
+                                result.closeDrawer();
+                                intent = new Intent(DiaryActivity.this, AllMarksActivity.class);
+                                finish();
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
                                 result.closeDrawer();
@@ -180,8 +177,8 @@ public class DiaryActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        // set the selection to the item with the identifier 3 (diary)
-        result.setSelection(diary, false);
+        // set the selection to the item with the identifier 3 (Dairy)
+        result.setSelection(DAIRY, false);
 
         //set the back arrow in the toolbar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -190,12 +187,12 @@ public class DiaryActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DiaryMonFragment(), getString(R.string.title_fragment_diary_mon));
-        adapter.addFragment(new DiaryTueFragment(), getString(R.string.title_fragment_diary_tue));
-        adapter.addFragment(new DiaryWedFragment(), getString(R.string.title_fragment_diary_wed));
-        adapter.addFragment(new DiaryThuFragment(), getString(R.string.title_fragment_diary_thu));
-        adapter.addFragment(new DiaryFriFragment(), getString(R.string.title_fragment_diary_fri));
-        adapter.addFragment(new DiarySatFragment(), getString(R.string.title_fragment_diary_sat));
+        adapter.addFragment(new DiaryMonFragment(), getString(R.string.title_fragment_dairy_mon));
+        adapter.addFragment(new DiaryTueFragment(), getString(R.string.title_fragment_dairy_tue));
+        adapter.addFragment(new DiaryWedFragment(), getString(R.string.title_fragment_dairy_wed));
+        adapter.addFragment(new DiaryThuFragment(), getString(R.string.title_fragment_dairy_thu));
+        adapter.addFragment(new DiaryFriFragment(), getString(R.string.title_fragment_dairy_fri));
+        adapter.addFragment(new DiarySatFragment(), getString(R.string.title_fragment_dairy_sat));
         viewPager.setAdapter(adapter);
     }
 

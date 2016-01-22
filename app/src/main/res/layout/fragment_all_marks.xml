@@ -1,0 +1,60 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="cowberryteam.ru.msa.fragment.AllMarksFragment">
+
+
+    <LinearLayout android:id="@+id/linearDairy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:background="@color/md_white_1000">
+
+            <TextView android:id="@+id/textSubject1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Математика"
+                android:textColor="@color/md_black_1000"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/textGPA1" />
+
+            <TextView android:id="@+id/textAllMarks1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="5, 4, 5, 5, 5, 4, 4, 4, 4, 5"
+                android:textColor="@color/colorGrey"
+                android:layout_below="@+id/textSubject1"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="15dp"
+                android:paddingBottom="10dp"
+                android:layout_toLeftOf="@+id/textGPA1"
+                android:singleLine="false" />
+
+            <TextView android:id="@+id/textGPA1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.64"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
