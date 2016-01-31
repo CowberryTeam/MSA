@@ -40,12 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cowberryteam.ru.msa.R;
-import cowberryteam.ru.msa.fragment.DiaryFriFragment;
-import cowberryteam.ru.msa.fragment.DiaryMonFragment;
-import cowberryteam.ru.msa.fragment.DiarySatFragment;
-import cowberryteam.ru.msa.fragment.DiaryThuFragment;
-import cowberryteam.ru.msa.fragment.DiaryTueFragment;
-import cowberryteam.ru.msa.fragment.DiaryWedFragment;
+import cowberryteam.ru.msa.fragment.DiaryFragment;
 
 public class DiaryActivity extends AppCompatActivity {
     private static final int NEWS = 1;
@@ -187,12 +182,12 @@ public class DiaryActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DiaryMonFragment(), getString(R.string.title_fragment_dairy_mon));
-        adapter.addFragment(new DiaryTueFragment(), getString(R.string.title_fragment_dairy_tue));
-        adapter.addFragment(new DiaryWedFragment(), getString(R.string.title_fragment_dairy_wed));
-        adapter.addFragment(new DiaryThuFragment(), getString(R.string.title_fragment_dairy_thu));
-        adapter.addFragment(new DiaryFriFragment(), getString(R.string.title_fragment_dairy_fri));
-        adapter.addFragment(new DiarySatFragment(), getString(R.string.title_fragment_dairy_sat));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_mon));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_tue));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_wed));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_thu));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_fri));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_sat));
         viewPager.setAdapter(adapter);
     }
 

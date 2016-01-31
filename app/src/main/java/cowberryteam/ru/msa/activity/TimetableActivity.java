@@ -40,12 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cowberryteam.ru.msa.R;
-import cowberryteam.ru.msa.fragment.TimetableFriFragment;
-import cowberryteam.ru.msa.fragment.TimetableMonFragment;
-import cowberryteam.ru.msa.fragment.TimetableSatFragment;
-import cowberryteam.ru.msa.fragment.TimetableThuFragment;
-import cowberryteam.ru.msa.fragment.TimetableTueFragment;
-import cowberryteam.ru.msa.fragment.TimetableWedFragment;
+import cowberryteam.ru.msa.fragment.TimetableFragment;
 
 public class TimetableActivity extends AppCompatActivity {
     private static final int NEWS = 1;
@@ -197,12 +192,12 @@ public class TimetableActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new TimetableMonFragment(), getString(R.string.title_fragment_dairy_mon));
-        adapter.addFragment(new TimetableTueFragment(), getString(R.string.title_fragment_dairy_tue));
-        adapter.addFragment(new TimetableWedFragment(), getString(R.string.title_fragment_dairy_wed));
-        adapter.addFragment(new TimetableThuFragment(), getString(R.string.title_fragment_dairy_thu));
-        adapter.addFragment(new TimetableFriFragment(), getString(R.string.title_fragment_dairy_fri));
-        adapter.addFragment(new TimetableSatFragment(), getString(R.string.title_fragment_dairy_sat));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_mon));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_tue));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_wed));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_thu));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_fri));
+        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_sat));
         viewPager.setAdapter(adapter);
     }
 
