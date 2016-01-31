@@ -8,6 +8,7 @@
     <string name="action_sign_in">Войти</string>
     <string name="action_sign_in_short">Войти</string>
     <string name="skip_auth">Пропустить авторизацию»</string>
+    <string name="loading">Загрузка</string>
 
     <string name="drawer_item_news">Новости</string>
     <string name="drawer_item_pm">Личные сообщения</string>
@@ -37,6 +38,10 @@
     <string name="table_dairy_subject">Предмет</string>
     <string name="table_dairy_homework">Домашнее задание</string>
     <string name="table_dairy_marks">Оценки</string>
+
+    <!-- Errors -->
+    <string name="error_empty_login">Нужно ввести логин</string>
+    <string name="error_empty_password">Нужно ввести пароль</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -31,79 +31,101 @@
                 android:src="@drawable/ic_logo_main_white"
                 android:paddingLeft="50dp" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_marginTop="40dp"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_below="@id/imageLogo"
-                android:layout_centerVertical="true">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="5dp">
-                    <AutoCompleteTextView
-                        android:id="@+id/login_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/username"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        style="@style/Alpha.EditText.Style"
-                        android:singleLine="true" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingTop="5dp">
-                    <EditText
-                        android:id="@+id/password_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/password"
-                        android:imeActionId="@+id/login"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        style="@style/Alpha.EditText.Style"
-                        android:singleLine="true" />
-                </android.support.design.widget.TextInputLayout>
-
+                android:layout_height="wrap_content">
                 <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/authLoginLayout"
+                    android:layout_marginTop="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp">
+                    android:layout_below="@id/imageLogo"
+                    android:layout_centerVertical="true">
 
-                    <Button
-                        android:id="@+id/buttonSignIn"
-                        android:text="@string/action_sign_in"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="5dp">
+                        <AutoCompleteTextView
+                            android:id="@+id/login_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/username"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            style="@style/Alpha.EditText.Style"
+                            android:singleLine="true" />
+                    </android.support.design.widget.TextInputLayout>
 
-                        style="@style/Card.Button.Style"/>
-
-                    <TextView
-                        android:id="@+id/buttonSkipAuth"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="top|center"
-                        android:height="50dp"
-                        android:text="@string/skip_auth"
-                        style="@style/TextAppearance.TextButton.Style" />
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="5dp">
+                        <EditText
+                            android:id="@+id/password_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/password"
+                            android:imeActionId="@+id/login"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            style="@style/Alpha.EditText.Style"
+                            android:singleLine="true" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp">
+
+                        <Button
+                            android:id="@+id/buttonSignIn"
+                            android:text="@string/action_sign_in"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            style="@style/Card.Button.Style"/>
+
+                        <TextView
+                            android:id="@+id/buttonSkipAuth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|center"
+                            android:height="50dp"
+                            android:text="@string/skip_auth"
+                            style="@style/TextAppearance.TextButton.Style" />
+                    </LinearLayout>
+
                 </LinearLayout>
-
-            </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/authLoadingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ProgressBar
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        style="@style/Widget.AppCompat.ProgressBar"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="@string/loading"/>
+                </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>
