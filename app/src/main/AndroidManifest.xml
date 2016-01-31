@@ -16,7 +16,7 @@
         <activity
             android:name=".activity.AuthorizationActivity"
             android:label="@string/title_activity_authorization"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
