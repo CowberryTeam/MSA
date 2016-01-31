@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MSA</string>
+    <string name="action_settings">настройки</string>
+    <string name="title_activity_authorization">Авторизация</string>
+    <string name="title_activity_dairy">Дневник</string>
+    <string name="username">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="skip_auth">Пропустить авторизацию»</string>
+
+    <string name="drawer_item_news">Новости</string>
+    <string name="drawer_item_pm">Личные сообщения</string>
+    <string name="drawer_item_dairy">Дневник</string>
+    <string name="drawer_item_allmarks">Все оценки</string>
+    <string name="drawer_item_timetable">Расписание</string>
+    <string name="drawer_item_handbook">Handbook</string>
+    <string name="drawer_item_settings">Настройки</string>
+    <string name="drawer_item_help">Помощь</string>
+    <string name="drawer_item_section_mrko">МРКО</string>
+    <string name="title_activity_all_marks">Все оценки</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_accountmanager">Менеджер аккаунтов</string>
+    <string name="title_activity_timetable">Расписание</string>
+    <string name="title_activity_news">Новости</string>
+    <string name="title_fragment_news_one">Новости приложения</string>
+    <string name="title_fragment_news_two">Новости школы</string>
+    <string name="title_fragment_dairy_mon">ПН</string>
+    <string name="title_fragment_dairy_tue">ВТ</string>
+    <string name="title_fragment_dairy_wed">СР</string>
+    <string name="title_fragment_dairy_thu">ЧТ</string>
+    <string name="title_fragment_dairy_fri">ПТ</string>
+    <string name="title_fragment_dairy_sat">СБ</string>
+    <string name="title_fragment_allmarks_first_half">Первое полугодие</string>
+    <string name="title_fragment_allmarks_second_half">Второе полугодие</string>
+    <string name="action_calendar">Календарь</string>
+    <string name="table_dairy_subject">Предмет</string>
+    <string name="table_dairy_homework">Домашнее задание</string>
+    <string name="table_dairy_marks">Оценки</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
