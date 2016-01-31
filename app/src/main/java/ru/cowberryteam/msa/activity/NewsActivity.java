@@ -1,4 +1,4 @@
-package cowberryteam.ru.msa.activity;
+package ru.cowberryteam.msa.activity;
 
 
 import android.content.Intent;
@@ -39,9 +39,9 @@ import com.mikepenz.materialize.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import cowberryteam.ru.msa.fragment.NewsOneFragment;
-import cowberryteam.ru.msa.fragment.NewsTwoFragment;
-import cowberryteam.ru.msa.R;
+import ru.cowberryteam.msa.fragment.NewsOneFragment;
+import ru.cowberryteam.msa.fragment.NewsTwoFragment;
+import ru.cowberryteam.msa.R;
 
 public class NewsActivity extends AppCompatActivity {
     private static final int NEWS = 1;

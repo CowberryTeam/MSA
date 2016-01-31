@@ -1,4 +1,4 @@
-package cowberryteam.ru.msa.activity;
+package ru.cowberryteam.msa.activity;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import com.mikepenz.materialize.util.UIUtils;
 
-import cowberryteam.ru.msa.R;
+import ru.cowberryteam.msa.R;
 
 public class AccManagerActivity extends AppCompatActivity {
 

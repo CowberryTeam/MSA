@@ -1,4 +1,4 @@
-package cowberryteam.ru.msa.activity;
+package ru.cowberryteam.msa.activity;
 
 
 import android.content.Intent;
@@ -39,10 +39,10 @@ import com.mikepenz.materialize.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import cowberryteam.ru.msa.R;
-import cowberryteam.ru.msa.fragment.TimetableFragment;
+import ru.cowberryteam.msa.R;
+import ru.cowberryteam.msa.fragment.DiaryFragment;
 
-public class TimetableActivity extends AppCompatActivity {
+public class DiaryActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
     private static final int DAIRY = 3;
@@ -62,12 +62,12 @@ public class TimetableActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timetable);
+        setContentView(R.layout.activity_diary);
 
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_timetable);
+        getSupportActionBar().setTitle(R.string.title_activity_dairy);
 
         viewPaper = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPaper);
@@ -101,13 +101,13 @@ public class TimetableActivity extends AppCompatActivity {
                         if (profile!= null) {
                             Intent intent = null;
                             if (profile.getIdentifier() == ADD_ACCOUNT) {
-                                intent = new Intent(TimetableActivity.this, AuthorizationActivity.class);
+                                intent = new Intent(DiaryActivity.this, AuthorizationActivity.class);
                             }
                             else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
-                                intent = new Intent(TimetableActivity.this, AccManagerActivity.class);
+                                intent = new Intent(DiaryActivity.this, AccManagerActivity.class);
                             }
                             if (intent != null) {
-                                TimetableActivity.this.startActivity(intent);
+                                DiaryActivity.this.startActivity(intent);
                             }
                         }
 
@@ -127,7 +127,7 @@ public class TimetableActivity extends AppCompatActivity {
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DAIRY),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(false).withIdentifier(ALL_MARKS),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_github).withSelectable(false).withIdentifier(TIMETABLE),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_times).withSelectable(false).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question).withSelectable(false).withIdentifier(HELP),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(SETTINGS)
@@ -139,29 +139,30 @@ public class TimetableActivity extends AppCompatActivity {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == NEWS) {
                                 result.closeDrawer();
-                                intent = new Intent(TimetableActivity.this, NewsActivity.class);
+                                intent = new Intent(DiaryActivity.this, NewsActivity.class);
                                 finish();
                             } else if (drawerItem.getIdentifier() == PM) {
 
                             } else if (drawerItem.getIdentifier() == DAIRY) {
-                                result.closeDrawer();
-                                intent = new Intent(TimetableActivity.this, DiaryActivity.class);
-                                finish();
+                                //intent = new Intent(DairyActivity.this, DairyActivity.class);
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
                                 result.closeDrawer();
-                                intent = new Intent(TimetableActivity.this, AllMarksActivity.class);
+                                intent = new Intent(DiaryActivity.this, AllMarksActivity.class);
                                 finish();
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
+                                result.closeDrawer();
+                                intent = new Intent(DiaryActivity.this, TimetableActivity.class);
+                                finish();
 
                             } else if (drawerItem.getIdentifier() == HELP) {
 
                             } else if (drawerItem.getIdentifier() == SETTINGS) {
-                                intent = new Intent(TimetableActivity.this, SettingsActivity.class);
+                                intent = new Intent(DiaryActivity.this, SettingsActivity.class);
                             }
 
                             if (intent != null) {
-                                TimetableActivity.this.startActivity(intent);
+                                DiaryActivity.this.startActivity(intent);
                             }
                         }
 
@@ -172,32 +173,21 @@ public class TimetableActivity extends AppCompatActivity {
                 .build();
 
         // set the selection to the item with the identifier 3 (Dairy)
-        result.setSelection(TIMETABLE, false);
+        result.setSelection(DAIRY, false);
 
         //set the back arrow in the toolbar
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setHomeButtonEnabled(false);
     }
-    private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
-            /*if (drawerItem instanceof Nameable) {
-                Log.i("material-drawer", "DrawerItem: " + ((Nameable) drawerItem).getName() + " - toggleChecked: " + isChecked);
-            } else {
-                Log.i("material-drawer", "toggleChecked: " + isChecked);
-            }*/
-        }
-    };
-
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_mon));
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_tue));
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_wed));
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_thu));
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_fri));
-        adapter.addFragment(new TimetableFragment(), getString(R.string.title_fragment_dairy_sat));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_mon));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_tue));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_wed));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_thu));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_fri));
+        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_sat));
         viewPager.setAdapter(adapter);
     }
 
@@ -229,10 +219,22 @@ public class TimetableActivity extends AppCompatActivity {
         }
     }
 
+    private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
+            /*if (drawerItem instanceof Nameable) {
+                Log.i("material-drawer", "DrawerItem: " + ((Nameable) drawerItem).getName() + " - toggleChecked: " + isChecked);
+            } else {
+                Log.i("material-drawer", "toggleChecked: " + isChecked);
+            }*/
+        }
+    };
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.diary, menu);
         return true;
     }
 
@@ -269,7 +271,7 @@ public class TimetableActivity extends AppCompatActivity {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(TimetableActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(DiaryActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);
