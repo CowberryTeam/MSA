@@ -17,4 +17,6 @@ public class AuthorizationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_authorization);
     }
 
+
+
 }

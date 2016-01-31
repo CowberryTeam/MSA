@@ -75,22 +75,32 @@
                         android:singleLine="true" />
                 </android.support.design.widget.TextInputLayout>
 
-                <Button
-                    android:id="@+id/buttonSignIn"
-                    android:text="@string/action_sign_in"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"/>
+                    android:orientation="vertical"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
 
-                <TextView
-                    android:id="@+id/buttonSkipAuth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/skip_auth"
-                    style="@style/TextAppearance.TextButton.Style" />
+                    <Button
+                        android:id="@+id/buttonSignIn"
+                        android:text="@string/action_sign_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        style="@style/Card.Button.Style"/>
+
+                    <TextView
+                        android:id="@+id/buttonSkipAuth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|center"
+                        android:height="50dp"
+                        android:text="@string/skip_auth"
+                        style="@style/TextAppearance.TextButton.Style" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
