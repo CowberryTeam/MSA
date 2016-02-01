@@ -5,11 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
@@ -36,13 +33,13 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialize.util.UIUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ru.cowberryteam.msa.R;
-import ru.cowberryteam.msa.fragment.DiaryFragment;
+import ru.cowberryteam.msa.fragment.AllMarksFragmentPager;
+import ru.cowberryteam.msa.fragment.DiaryFragmentPager;
+import ru.cowberryteam.msa.fragment.NewsFragmentPager;
+import ru.cowberryteam.msa.fragment.TimetableFragmentPager;
 
-public class DiaryActivity extends AppCompatActivity {
+public class DrawerActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
     private static final int DAIRY = 3;
@@ -56,31 +53,20 @@ public class DiaryActivity extends AppCompatActivity {
     //save our header or result
     private AccountHeader headerResult = null;
     private Drawer result = null;
-    private TabLayout tabLayout = null;
-    private ViewPager viewPaper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diary);
+        setContentView(R.layout.activity_drawer);
 
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.title_activity_dairy);
 
-        viewPaper = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPaper);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPaper);
-
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);
         final IProfile profile2 = new ProfileDrawerItem().withName("Max Muster").withEmail("max.mustermann@gmail.com").withIcon(R.drawable.ic_drawer_profile);
-        /*final IProfile profile3 = new ProfileDrawerItem().withName("Felix House").withEmail("felix.house@gmail.com").withIcon(R.drawable.profile3);
-        final IProfile profile4 = new ProfileDrawerItem().withName("Mr. X").withEmail("mister.x.super@gmail.com").withIcon(R.drawable.profile4);
-        final IProfile profile5 = new ProfileDrawerItem().withName("Batman").withEmail("batman@gmail.com").withIcon(R.drawable.profile5);*/
 
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
@@ -98,16 +84,16 @@ public class DiaryActivity extends AppCompatActivity {
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean current) {
-                        if (profile!= null) {
+                        if (profile != null) {
                             Intent intent = null;
                             if (profile.getIdentifier() == ADD_ACCOUNT) {
-                                intent = new Intent(DiaryActivity.this, AuthorizationActivity.class);
-                            }
-                            else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
-                                intent = new Intent(DiaryActivity.this, AccManagerActivity.class);
+                                intent = new Intent(DrawerActivity.this, AuthorizationActivity.class);
+                                finish();
+                            } else if (profile.getIdentifier() == ACCOUNT_MANAGER) {
+                                intent = new Intent(DrawerActivity.this, AccManagerActivity.class);
                             }
                             if (intent != null) {
-                                DiaryActivity.this.startActivity(intent);
+                                DrawerActivity.this.startActivity(intent);
                             }
                         }
 
@@ -122,47 +108,49 @@ public class DiaryActivity extends AppCompatActivity {
                 .withToolbar(toolbar)
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(false).withIdentifier(NEWS),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(false).withIdentifier(PM),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(true).withIdentifier(NEWS),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(true).withIdentifier(PM),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_dairy).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(DAIRY),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(false).withIdentifier(ALL_MARKS),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_times).withSelectable(false).withIdentifier(TIMETABLE),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(true).withIdentifier(DAIRY),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(true).withIdentifier(ALL_MARKS),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_times).withSelectable(true).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question).withSelectable(false).withIdentifier(HELP),
+                        new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question).withSelectable(true).withIdentifier(HELP),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(FontAwesome.Icon.faw_cog).withSelectable(false).withIdentifier(SETTINGS)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem != null) {
+                            Fragment mFragment = null;
+                            FragmentManager mFragmentManager = getSupportFragmentManager();
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == NEWS) {
-                                result.closeDrawer();
-                                intent = new Intent(DiaryActivity.this, NewsActivity.class);
-                                finish();
+                                getSupportActionBar().setTitle(R.string.title_fragment_news);
+                                mFragment = new NewsFragmentPager();
                             } else if (drawerItem.getIdentifier() == PM) {
 
                             } else if (drawerItem.getIdentifier() == DAIRY) {
-                                //intent = new Intent(DairyActivity.this, DairyActivity.class);
+                                getSupportActionBar().setTitle(R.string.title_fragment_diary);
+                                mFragment = new DiaryFragmentPager();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
-                                result.closeDrawer();
-                                intent = new Intent(DiaryActivity.this, AllMarksActivity.class);
-                                finish();
+                                getSupportActionBar().setTitle(R.string.title_fragment_all_marks);
+                                mFragment = new AllMarksFragmentPager();
 
                             } else if (drawerItem.getIdentifier() == TIMETABLE) {
-                                result.closeDrawer();
-                                intent = new Intent(DiaryActivity.this, TimetableActivity.class);
-                                finish();
-
+                                getSupportActionBar().setTitle(R.string.title_fragment_timetable);
+                                mFragment = new TimetableFragmentPager();
                             } else if (drawerItem.getIdentifier() == HELP) {
 
                             } else if (drawerItem.getIdentifier() == SETTINGS) {
-                                intent = new Intent(DiaryActivity.this, SettingsActivity.class);
+                                intent = new Intent(DrawerActivity.this, SettingsActivity.class);
                             }
 
-                            if (intent != null) {
-                                DiaryActivity.this.startActivity(intent);
+                            if (mFragment != null){
+                                mFragmentManager.beginTransaction().replace(R.id.fragment_container, mFragment).commit();
+                            }
+                            else if (intent != null) {
+                                DrawerActivity.this.startActivity(intent);
                             }
                         }
 
@@ -173,60 +161,16 @@ public class DiaryActivity extends AppCompatActivity {
                 .build();
 
         // set the selection to the item with the identifier 3 (Dairy)
-        result.setSelection(DAIRY, false);
-
-        //set the back arrow in the toolbar
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setHomeButtonEnabled(false);
-    }
-
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_mon));
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_tue));
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_wed));
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_thu));
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_fri));
-        adapter.addFragment(new DiaryFragment(), getString(R.string.title_fragment_dairy_sat));
-        viewPager.setAdapter(adapter);
-    }
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
+        result.setSelection(DAIRY, false); //dafault page
+        Fragment mFragment = null;
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        mFragment = new DiaryFragmentPager();
+        mFragmentManager.beginTransaction().replace(R.id.fragment_container, mFragment).commit();
     }
 
     private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
-            /*if (drawerItem instanceof Nameable) {
-                Log.i("material-drawer", "DrawerItem: " + ((Nameable) drawerItem).getName() + " - toggleChecked: " + isChecked);
-            } else {
-                Log.i("material-drawer", "toggleChecked: " + isChecked);
-            }*/
         }
     };
 
@@ -271,7 +215,7 @@ public class DiaryActivity extends AppCompatActivity {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {  //Это нам
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(DiaryActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
+                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(DrawerActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
             }
 
             //mode.getMenuInflater().inflate(R.menu.cab, menu);

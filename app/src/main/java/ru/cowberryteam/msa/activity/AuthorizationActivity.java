@@ -31,7 +31,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonSkipAuth:
-                openNewsActivity();
+                openDrawerActivity();
                 break;
             case R.id.buttonSignIn:
                 login();
@@ -85,13 +85,14 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
         protected void onPostExecute(Boolean aBoolean) {
             ((LinearLayout)findViewById(R.id.authLoginLayout)).setVisibility(View.VISIBLE);
             ((LinearLayout)findViewById(R.id.authLoadingLayout)).setVisibility(View.GONE);
-            openNewsActivity();
+            openDrawerActivity();
         }
     }
 
-    public void openNewsActivity(){
-        Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
+    public void openDrawerActivity(){
+        Intent intent = new Intent(getApplicationContext(), DrawerActivity.class);
         startActivity(intent);
+        finish();
         overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_in_top);
     }
 }
