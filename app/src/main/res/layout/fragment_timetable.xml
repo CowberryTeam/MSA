@@ -10,51 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@color/md_white_1000"
-            android:clickable="true">
 
-
-            <TextView android:id="@+id/textSubject1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/md_black_1000"
-                android:text="1. Математика"
-                android:maxLines="2"
-                android:paddingLeft="15dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_centerVertical="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(60)"
-                android:textColor="@color/md_black_1000"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_toRightOf="@+id/textSubject1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_centerVertical="true"/>
-
-            <TextView android:id="@+id/textTimetable1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="08:30\n09:15"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="15dp"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/md_black_1000"
-                android:lines="2"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-        </RelativeLayout>
 
     </LinearLayout>
 </ScrollView>
