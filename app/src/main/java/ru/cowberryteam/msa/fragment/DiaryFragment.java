@@ -2,6 +2,7 @@ package ru.cowberryteam.msa.fragment;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -34,6 +35,11 @@ public class DiaryFragment extends Fragment {
         try {
             day = savedInstanceState.getInt("day");
         }catch (Exception e){e.printStackTrace();}
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
     }
 
     @Override

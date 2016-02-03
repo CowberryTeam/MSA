@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -42,7 +43,7 @@ import ru.cowberryteam.msa.fragment.TimetableFragmentPager;
 public class DrawerActivity extends AppCompatActivity {
     private static final int NEWS = 1;
     private static final int PM = 2;
-    private static final int DAIRY = 3;
+    private static final int DIARY = 3;
     private static final int ALL_MARKS = 4;
     private static final int TIMETABLE = 5;
     private static final int HELP = 6;
@@ -51,8 +52,8 @@ public class DrawerActivity extends AppCompatActivity {
     private static final int ACCOUNT_MANAGER = 9;
 
     //save our header or result
-    private AccountHeader headerResult = null;
-    private Drawer result = null;
+    private AccountHeader accountHeader = null;
+    private Drawer drawer = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +63,13 @@ public class DrawerActivity extends AppCompatActivity {
         // Handle Toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.title_activity_dairy);
 
         // Create a few sample profile
         final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(R.drawable.ic_drawer_profile);
         final IProfile profile2 = new ProfileDrawerItem().withName("Max Muster").withEmail("max.mustermann@gmail.com").withIcon(R.drawable.ic_drawer_profile);
 
         // Create the AccountHeader
-        headerResult = new AccountHeaderBuilder()
+        accountHeader = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withCompactStyle(true)
                 .withHeaderBackground(R.drawable.ic_header)
@@ -103,15 +103,15 @@ public class DrawerActivity extends AppCompatActivity {
                 .build();
 
         //Create the drawer
-        result = new DrawerBuilder()
+        drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
-                .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
+                .withAccountHeader(accountHeader) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_news).withIcon(FontAwesome.Icon.faw_newspaper_o).withSelectable(true).withIdentifier(NEWS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_pm).withIcon(FontAwesome.Icon.faw_envelope).withSelectable(true).withIdentifier(PM),
                         new SectionDrawerItem().withName(R.string.drawer_item_section_mrko),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(true).withIdentifier(DAIRY),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_diary).withIcon(FontAwesome.Icon.faw_cog).withSelectable(true).withIdentifier(DIARY),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_allmarks).withIcon(FontAwesome.Icon.faw_calendar).withSelectable(true).withIdentifier(ALL_MARKS),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_timetable).withIcon(FontAwesome.Icon.faw_times).withSelectable(true).withIdentifier(TIMETABLE),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
@@ -130,7 +130,7 @@ public class DrawerActivity extends AppCompatActivity {
                                 mFragment = new NewsFragmentPager();
                             } else if (drawerItem.getIdentifier() == PM) {
 
-                            } else if (drawerItem.getIdentifier() == DAIRY) {
+                            } else if (drawerItem.getIdentifier() == DIARY) {
                                 getSupportActionBar().setTitle(R.string.title_fragment_diary);
                                 mFragment = new DiaryFragmentPager();
                             } else if (drawerItem.getIdentifier() == ALL_MARKS) {
@@ -160,12 +160,9 @@ public class DrawerActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        // set the selection to the item with the identifier 3 (Dairy)
-        result.setSelection(DAIRY, false); //dafault page
-        Fragment mFragment = null;
-        FragmentManager mFragmentManager = getSupportFragmentManager();
-        mFragment = new DiaryFragmentPager();
-        mFragmentManager.beginTransaction().replace(R.id.fragment_container, mFragment).commit();
+        if(savedInstanceState == null) {
+            onFirstActivityStart();
+        }
     }
 
     private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
@@ -174,13 +171,30 @@ public class DrawerActivity extends AppCompatActivity {
         }
     };
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.diary, menu);
         return true;
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //add the values which need to be saved from the drawer to the bundle
+        outState = drawer.saveInstanceState(outState);
+        //add the values which need to be saved from the accountHeader to the bundle
+        outState = accountHeader.saveInstanceState(outState);
+        super.onSaveInstanceState(outState);
+        outState.putString("currentTitle", getSupportActionBar().getTitle().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        getSupportActionBar().setTitle(savedInstanceState.getString("currentTitle"));
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -198,11 +212,20 @@ public class DrawerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
-        if (result != null && result.isDrawerOpen()) {
-            result.closeDrawer();
+        if (drawer != null && drawer.isDrawerOpen()) {
+            drawer.closeDrawer();
         } else {
             super.onBackPressed();
         }
+    }
+
+    protected void onFirstActivityStart() {
+        getSupportActionBar().setTitle(R.string.title_activity_diary); //default title
+        drawer.setSelection(DIARY, false); //default page
+        Fragment mFragment = null;
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        mFragment = new DiaryFragmentPager();
+        mFragmentManager.beginTransaction().replace(R.id.fragment_container, mFragment).commit();
     }
 
     class ActionBarCallBack implements ActionMode.Callback {
