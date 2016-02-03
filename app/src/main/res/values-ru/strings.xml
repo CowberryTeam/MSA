@@ -2,7 +2,7 @@
     <string name="app_name">MSA</string>
     <string name="action_settings">настройки</string>
     <string name="title_activity_authorization">Авторизация</string>
-    <string name="title_activity_dairy">Дневник</string>
+    <string name="title_activity_diary">Дневник</string>
     <string name="username">Имя пользователя</string>
     <string name="password">Пароль</string>
     <string name="action_sign_in">Войти</string>
